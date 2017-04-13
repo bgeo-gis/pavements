@@ -1,0 +1,37 @@
+# This file contains metadata for your plugin. Since 
+# version 2.0 of QGIS this is the proper way to supply 
+# information about a plugin. The old method of 
+# embedding metadata in __init__.py will 
+# is no longer supported since version 2.0.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=pavements
+qgisMinimumVersion=2.8
+description=pavements plugin description
+about=About...
+version=0.2
+author=David Erill
+email=derill@bgeo.es
+
+# End of mandatory metadata
+
+# Recommended items:
+
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=pavements, managements, model
+
+homepage=
+repository=https://github.com/bgeo-gis/pavements
+category=Plugins
+icon=icons/pavements.png
+# experimental flag
+experimental=True
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
