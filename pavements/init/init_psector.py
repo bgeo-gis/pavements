@@ -45,18 +45,29 @@ def configIni():
     #dao_controller = controller.DaoController()
     #dao_controller.initConfig(plugin_name)    
 
+
+    #utils_pavements.set_logging('log', plugin_name)
+    #logger = utils_pavements.logging.getLogger(plugin_name)
+    #logger.info('init_pol.configIni')
+       
+    # Get plugin directory
+    user_folder = os.path.expanduser("~") 
+    plugin_dir = os.path.join(user_folder, '.qgis2/python/plugins/'+plugin_name)     
+    
+    # Get config file
+    setting_file = os.path.join(plugin_dir, 'config', plugin_name.lower()+'.config')
+    # Load local settings of the plugin                   
+    settings = QSettings(setting_file, QSettings.IniFormat)
+    
     # Set controller to handle settings and database
     dao_controller = controller.DaoController(settings)
     dao_controller.initConfig( plugin_name)
-    
-
-    
     
     # Connect to Database
     dao_controller.setDatabaseConnection()     
     dao = dao_controller.getDao()
     schema_name = dao_controller.getSchemaName()        
-    logger = dao_controller.getLogger()      
+    logger = dao_controller.getLogger()   
     
     return True  
             

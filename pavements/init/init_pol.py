@@ -116,6 +116,8 @@ def configIni():
     # Load local settings of the plugin                   
     settings = QSettings(setting_file, QSettings.IniFormat)
     return True
+    
+    
 
 
 def manageNew():
